@@ -16,7 +16,7 @@ type Page struct {
 }
 
 func titleDisplay(title string) string {
-	return strings.Replace(title, "_", " ", 0)
+	return strings.Replace(title, "_", " ", -1)
 }
 
 func (p *Page) save() error {
