@@ -69,7 +69,9 @@ var funcMap = template.FuncMap{
 			"titleFmt":titleDisplay,
 	}
 
-var templates = template.Must(template.ParseFiles("tmpl/edit.html", "tmpl/view.html"))
+var templates = template.Must(template.New("titleTest").Funcs(funcMap).ParseFiles("tmpl/edit.html", "tmpl/view.html"))
+
+//var templates = template.Must(template.ParseFiles("tmpl/edit.html", "tmpl/view.html"))
 //.Funcs(funcMap))
 
 func renderTemplate(w http.ResponseWriter, tmpl string, p *Page) {
