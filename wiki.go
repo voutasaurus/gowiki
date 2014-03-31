@@ -69,7 +69,7 @@ var funcMap = template.FuncMap{
 			"titleFmt":titleDisplay,
 	}
 
-var templates = template.Must(template.New("titleTest").Funcs(funcMap).ParseFiles("tmpl/edit.html", "tmpl/view.html"))
+var templates *template.Template // = template.Must(template.New("titleTest").Funcs(funcMap).ParseFiles("tmpl/edit.html", "tmpl/view.html"))
 
 //var templates = template.Must(template.ParseFiles("tmpl/edit.html", "tmpl/view.html"))
 //.Funcs(funcMap))
@@ -98,6 +98,10 @@ func makeHandler(fn func (http.ResponseWriter, *http.Request, string)) http.Hand
 }
 
 func main() {
+
+	templates = template.New("titleTest").Funcs(funcMap)
+	templates = template.Must(templates.ParseFiles("tmpl/edit.html", "tmpl/view.html"))
+	
 	http.HandleFunc("/", frontHandler)
 	http.HandleFunc("/view/", makeHandler(viewHandler))
 	http.HandleFunc("/edit/", makeHandler(editHandler))
