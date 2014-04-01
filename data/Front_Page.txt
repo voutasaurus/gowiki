@@ -1,2 +1,10 @@
 Welcome to the Front Page of the Wiki! 
-You can find many interesting things here. :-)
+You can find many interesting things%20here. :-)
+
+Now with CSS!
+
+Why aren't the htmls working?
+
+and again [Front Page]
+
+<script>dangerous</script>

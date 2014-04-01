@@ -7,6 +7,7 @@ import (
 		"net/http"
 		"regexp"
 		"strings"
+		// "html"
 		//"errors"
 )
 
@@ -17,6 +18,30 @@ type Page struct {
 
 func titleDisplay(title string) string {
 	return strings.Replace(title, "_", " ", -1)
+}
+
+func repl(semlink []byte) []byte {
+	m := len(semlink)
+	pageName := string(semlink[1:m-1])
+	address := "/view/" + strings.Replace(pageName, " ", "_", -1)
+	link := "<a href=\"" + address + "\">" + pageName + "</a>"
+	return []byte(link)
+}
+
+func parseBody(body []byte) []byte {
+
+	safe := template.HTMLEscapeString(string(body))
+
+	safe = strings.Replace(safe, "\n", "<br>", -1)
+	
+	semlink := regexp.MustCompile(`\[[0-9A-Za-z_ ]+\]`) // note the space
+	
+	return semlink.ReplaceAllFunc([]byte(safe), repl)
+
+}
+
+func show(body []byte) template.HTML {
+	return template.HTML(string(body))
 }
 
 func (p *Page) save() error {
@@ -65,8 +90,11 @@ func saveHandler(w http.ResponseWriter, r *http.Request, title string) {
 	http.Redirect(w, r, "/view/"+title, http.StatusFound)
 }
 
+
 var funcMap = template.FuncMap{
 			"titleFmt":titleDisplay,
+			"parse":parseBody,
+			"show":show,
 	}
 
 var templates *template.Template // = template.Must(template.New("titleTest").Funcs(funcMap).ParseFiles("tmpl/edit.html", "tmpl/view.html"))

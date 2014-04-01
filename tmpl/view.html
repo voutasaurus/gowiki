@@ -58,7 +58,7 @@
 
 <!-- <p>[<a href="/edit/{{.Title}}">edit</a>]</p> -->
 
-<div class="section-container">{{printf "%s" .Body}}</div>
+{{.Body | parse | show }}
 
 </div>
 
