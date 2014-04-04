@@ -7,4 +7,7 @@ Why aren't the htmls working?
 
 and again [Front Page]
 
+==Section Heading==
+This section is about stuff
+
 <script>dangerous</script>

@@ -126,6 +126,11 @@ h1 {
   margin: 0.67em 0;
 }
 
+h2 {
+  font-size: 160%;
+  margin: 0.67em 0;
+}
+
 /**
  * Address styling not present in IE 8/9, Safari 5, and Chrome.
  */
@@ -2079,7 +2084,7 @@ h1 {
 
 /* line 199, ../sass/foundation/components/_type.scss */
 h2 {
-  font-size: 3.375em;
+  font-size: 160%;
 }
 
 /* line 200, ../sass/foundation/components/_type.scss */
@@ -2105,7 +2110,7 @@ h6 {
 /* line 207, ../sass/foundation/components/_type.scss */
 hr {
   border: solid #dddddd;
-  border-width: 1px 0 0;
+  border-width: 3px 3px 3px;
   clear: both;
   margin: 1.25em 0 1.1875em;
   height: 0;
@@ -2296,7 +2301,7 @@ blockquote p {
 
   /* line 368, ../sass/foundation/components/_type.scss */
   h2 {
-    font-size: 4em;
+    font-size: 160%;
   }
 
   /* line 369, ../sass/foundation/components/_type.scss */
