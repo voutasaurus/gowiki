@@ -1,4 +1,4 @@
 gowiki
 ======
 
-testbed for goweb projects
+A wiki written in Go.
