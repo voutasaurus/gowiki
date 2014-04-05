@@ -1,5 +1,10 @@
 package main
 
+/* Handlers file
+Definitions 
+
+*/
+
 import (
 		"net/http"
 		"regexp"

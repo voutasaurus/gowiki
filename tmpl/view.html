@@ -6,6 +6,11 @@
 
 <body>
 
+<script
+src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
+</script>
+<script src="/scripts/toc.js">test</script> 
+
 <div class="side-nav">
 <img src="/img/icon.png" alt="icon" height="160" width="160">
 
@@ -14,17 +19,11 @@
 <ul style="list-style: none;">
 
 <li><a href="/view/Front_Page">Front Page</a></li>
-
 <li><a href="#link 2">Something</a></li>
-
 <li><a href="#link 3">Anotherthing</a></li>
-
 <li><a href="#link 4">Morething</a></li>
-
 <li><a href="#link 5">Furtherthing</a></li>
-
 <li><a href="#link 6">Extrathing</a></li>
-
 </ul>
 
 </div>
@@ -34,28 +33,20 @@
 <div class="top-bar-section">
 
 <ul>
-
 <li><a href="/view/{{.Title}}">View</a></li>
-
 <li><a href="/edit/{{.Title}}">Edit</a></li>
-
 <li><a href="/disc/{{.Title}}">Discussion</a></li>
-
 <li><a href="/chng/{{.Title}}">Changes</a></li>
-
 </ul>
 
 </div>
 </div>
 
 <div class="article">
-
 <h1>{{.Title | titleFmt}}</h1>
-<!-- <script src="/scripts/toc.js"></script> -->
-<!-- <p>[<a href="/edit/{{.Title}}">edit</a>]</p> -->
-
+<article>
 {{.Body | parse | show }}
-
+</article>
 </div>
 
 </body>
