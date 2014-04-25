@@ -8,6 +8,10 @@ import (
 		//"errors"
 )
 
+func undiscuss(title string) string {
+	return strings.TrimSuffix(title, "_discuss")
+}
+
 func titleDisplay(title string) string {
 	return strings.Replace(title, "_", " ", -1)
 }

@@ -29,6 +29,7 @@ var funcMap = template.FuncMap{
 			"titleFmt":titleDisplay,
 			"parse":parseBody,
 			"show":show,
+			"undiscuss":undiscuss,
 	}
 
 /*	

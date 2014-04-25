@@ -6,10 +6,10 @@
 
 <body>
 
-<script
+<script type="text/javascript" language="javascript"
 src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
 </script>
-<script src="/scripts/toc.js">test</script> 
+<script type="text/javascript" language="javascript" src="/scripts/toc.js">test</script> 
 
 <div class="side-nav">
 <img src="/img/icon.png" alt="icon" height="160" width="160">
@@ -30,16 +30,18 @@ src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
 
 
 <div class="top-bar">
-<div class="top-bar-section">
 
+<div class="top-bar-section" align=left>
 <ul>
-<li><a href="/view/{{.Title}}">View</a></li>
-<li><a href="/edit/{{.Title}}">Edit</a></li>
-<li><a href="/disc/{{.Title}}">Discussion</a></li>
-<li><a href="/chng/{{.Title}}">Changes</a></li>
+<li><a href="/view/{{.Title | undiscuss}}">View</a></li>
+<li><a href="/edit/{{.Title | undiscuss}}">Edit</a></li>
+<li> ------------------- </li>
+<li><a href="/view/{{.Title | undiscuss}}_discuss">Discussion</a></li>
+<li><a href="/edit/{{.Title | undiscuss}}_discuss">Edit</a></li>
+<li><a href="/chng/{{.Title | undiscuss}}">Changes</a></li>
 </ul>
-
 </div>
+
 </div>
 
 <div class="article">
